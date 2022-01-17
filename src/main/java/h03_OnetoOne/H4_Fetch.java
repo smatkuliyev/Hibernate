@@ -59,6 +59,7 @@ public class H4_Fetch {
 		
 		sf.close();
 		session.close();
+		
 	}
-
+	
 }

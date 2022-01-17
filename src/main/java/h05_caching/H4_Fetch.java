@@ -1,4 +1,4 @@
-package h5_caching;
+package h05_caching;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

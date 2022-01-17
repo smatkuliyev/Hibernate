@@ -89,6 +89,8 @@ public class H1_Sehir {
 	public String toString() {
 		return "H1_Sehir [sehirPlaka=" + sehirPlaka + ", sehirAdi=" + sehirAdi + ", sehirNufus=" + sehirNufus + "]";
 	}
+
+
 	
 		
 	

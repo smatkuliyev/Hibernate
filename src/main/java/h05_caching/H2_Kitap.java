@@ -1,4 +1,4 @@
-package h5_caching;
+package h05_caching;
 
 import javax.persistence.Cacheable;
 import javax.persistence.Entity;
