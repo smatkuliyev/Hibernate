@@ -11,14 +11,14 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class H1_Ogrenci {
-	// ManyToMany = ogrencilerden -> kutuphane kitaplari
-	
-	@Id
-	private int std_id;
-	
-	private String name;
-	
-	private int grade;
+    // ManyToMany = ogrencilerden -> kutuphane kitaplari
+
+    @Id
+    private int std_id;
+
+    private String name;
+
+    private int grade;
 
 	
 	/*
@@ -39,76 +39,70 @@ public class H1_Ogrenci {
 	 H2_Kitap relationship in öbür tarafında olduğundan "book_id" ters birleştirme (inverseJoinColumns) sütunudur.
 
 	*/
-	
-	@ManyToMany
-	@JoinTable(name = "H1_Ogrenci_H2_Kitap",
-				joinColumns = {@JoinColumn(name = "ogrenci")},
-				inverseJoinColumns = {@JoinColumn(name = "kitap")}
-			)
-	private List<H2_Kitap> books = new ArrayList<>();
-	
-	public H1_Ogrenci() {
-		super();
-	}
+
+    @ManyToMany
+    @JoinTable(name = "H1_Ogrenci_H2_Kitap",
+            joinColumns = {@JoinColumn(name = "ogrenci")},
+            inverseJoinColumns = {@JoinColumn(name = "kitap")}
+    )
+    private List<H2_Kitap> books = new ArrayList<>();
+
+    public H1_Ogrenci() {
+        super();
+    }
 
 
-	public H1_Ogrenci(int std_id, String name, int grade) {
-		this.std_id = std_id;
-		this.name = name;
-		this.grade = grade;
-	}
+    public H1_Ogrenci(int std_id, String name, int grade) {
+        this.std_id = std_id;
+        this.name = name;
+        this.grade = grade;
+    }
 
 
-	public int getStd_id() {
-		return std_id;
-	}
+    public int getStd_id() {
+        return std_id;
+    }
 
 
-	public void setStd_id(int std_id) {
-		this.std_id = std_id;
-	}
+    public void setStd_id(int std_id) {
+        this.std_id = std_id;
+    }
 
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
 
-	public int getGrade() {
-		return grade;
-	}
+    public int getGrade() {
+        return grade;
+    }
 
 
-	public void setGrade(int grade) {
-		this.grade = grade;
-	}
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
 
 
-	public List<H2_Kitap> getBooks() {
-		return books;
-	}
+    public List<H2_Kitap> getBooks() {
+        return books;
+    }
 
 
-	public void setBooks(List<H2_Kitap> books) {
-		this.books = books;
-	}
+    public void setBooks(List<H2_Kitap> books) {
+        this.books = books;
+    }
 
 
-	@Override
-	public String toString() {
-		return "std_id=" + std_id + ", name=" + name + ", grade=" + grade + ", books=" + books;
-	}
-	
-	
-	
-	
-	
-	
-	
+    @Override
+    public String toString() {
+        return "std_id=" + std_id + ", name=" + name + ", grade=" + grade + ", books=" + books;
+    }
+
 
 }

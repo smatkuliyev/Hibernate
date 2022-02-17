@@ -9,11 +9,11 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class H2_Kitap {
-	
-	@Id
-	private int book_id;
-	
-	private String book;
+
+    @Id
+    private int book_id;
+
+    private String book;
 	
 	/*
 	 İki tablo arasında "Many To Many" ilişkisi oluşturmak istediğinizde, @ManyToMany ek açıklamasını kullanmanız gerekir.
@@ -25,53 +25,48 @@ public class H2_Kitap {
 	İki tablo arasında ilişki oluşturmak için 2 tabloya gerek yoktur
 	bunu önlemek için @mappedBy("books") kullanmalıyız
    */
-	
-	@ManyToMany(mappedBy = "books")
-	private List<H1_Ogrenci> students = new ArrayList<>();
-	
 
-	public H2_Kitap() {
+    @ManyToMany(mappedBy = "books")
+    private List<H1_Ogrenci> students = new ArrayList<>();
 
-	}
 
-	public H2_Kitap(int book_id, String book) {
-		this.book_id = book_id;
-		this.book = book;
-	}
+    public H2_Kitap() {
 
-	public int getBook_id() {
-		return book_id;
-	}
+    }
 
-	public void setBook_id(int book_id) {
-		this.book_id = book_id;
-	}
+    public H2_Kitap(int book_id, String book) {
+        this.book_id = book_id;
+        this.book = book;
+    }
 
-	public String getBook() {
-		return book;
-	}
+    public int getBook_id() {
+        return book_id;
+    }
 
-	public void setBook(String book) {
-		this.book = book;
-	}
+    public void setBook_id(int book_id) {
+        this.book_id = book_id;
+    }
 
-	public List<H1_Ogrenci> getStudents() {
-		return students;
-	}
+    public String getBook() {
+        return book;
+    }
 
-	public void setStudents(List<H1_Ogrenci> students) {
-		this.students = students;
-	}
+    public void setBook(String book) {
+        this.book = book;
+    }
 
-	@Override
-	public String toString() {
-		return "book_id=" + book_id + ", book=" + book;
-	}
-	
-	
-	
-	
-	
-	
+    public List<H1_Ogrenci> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<H1_Ogrenci> students) {
+        this.students = students;
+    }
+
+    @Override
+    public String toString() {
+        return "book_id=" + book_id + ", book=" + book;
+    }
+
 
 }

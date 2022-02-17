@@ -6,7 +6,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class H4_Fetch {
-	// ==================== HIBERNATE CACHING MEKANİZMASI =============================
+    // ==================== HIBERNATE CACHING MEKANİZMASI =============================
 		/* 	Hibernate'te default olarak L1-cache sistemi kullanılmaktadir.
 		 * 
 		 *  Eğer kullanıcı bir veriyi tekrar tekrar talep eder ise 
@@ -38,40 +38,40 @@ public class H4_Fetch {
 		 *  
 		 * */
 
-	public static void main(String[] args) {
-		
-		Configuration con = new Configuration().configure("hibernate.cfg.xml")
-				.addAnnotatedClass(H1_Ogrenci.class)
-				.addAnnotatedClass(H2_Kitap.class);
+    public static void main(String[] args) {
 
-		SessionFactory sf = con.buildSessionFactory();
-		Session session1 = sf.openSession();
-		
-		Transaction tx1 = session1.beginTransaction();
-		
-		// id=11 olan ögr getir
-		System.out.println(session1.get(H1_Ogrenci.class, 11));
-		
-		// id=12 olan ögr getir
-		System.out.println(session1.get(H1_Ogrenci.class, 12));
-		
-		// 2nd time call
-		System.out.println(session1.get(H1_Ogrenci.class, 11));
-		System.out.println(session1.get(H1_Ogrenci.class, 12));
-		tx1.commit();
-		session1.close();
-		System.out.println("session1 kapatildi");
-		
-		
-		session1 = sf.openSession();
-		tx1 = session1.beginTransaction();
-		
-		System.out.println(session1.get(H1_Ogrenci.class, 11));
-		System.out.println(session1.get(H1_Ogrenci.class, 12));
-		
-		tx1.commit();
-		session1.close();
-		
+        Configuration con = new Configuration().configure("hibernate.cfg.xml")
+                .addAnnotatedClass(H1_Ogrenci.class)
+                .addAnnotatedClass(H2_Kitap.class);
+
+        SessionFactory sf = con.buildSessionFactory();
+        Session session1 = sf.openSession();
+
+        Transaction tx1 = session1.beginTransaction();
+
+        // id=11 olan ögr getir
+        System.out.println(session1.get(H1_Ogrenci.class, 11));
+
+        // id=12 olan ögr getir
+        System.out.println(session1.get(H1_Ogrenci.class, 12));
+
+        // 2nd time call
+        System.out.println(session1.get(H1_Ogrenci.class, 11));
+        System.out.println(session1.get(H1_Ogrenci.class, 12));
+        tx1.commit();
+        session1.close();
+        System.out.println("session1 kapatildi");
+
+
+        session1 = sf.openSession();
+        tx1 = session1.beginTransaction();
+
+        System.out.println(session1.get(H1_Ogrenci.class, 11));
+        System.out.println(session1.get(H1_Ogrenci.class, 12));
+
+        tx1.commit();
+        session1.close();
+
 //		// Ayrı session'ların aynı veriyi cache'den alabilmesi için L2 cache sisteminin acilmasi gerekir.
 //		// Bunun için 
 //		// 1) Aşağıda anotasyonların ilgili nesnelere eklenemsi gerekir.
@@ -87,23 +87,23 @@ public class H4_Fetch {
 //		//		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
 //		//		<property name="hibernate.cache.provider_class">org.hibernate.cache.internal.EhcacheProvider</property>
 //	
-		
-		// Ayrı bir sessionda aynı veriye (11) erişmek istersek ne olur?
-				// Cevap: Bu veri, diğer session'a ait oldugu icin bu session'nın cache'inde bulunmaz.
-				// Bu sebeple ile yeniden veritabanına gitmek gerekecektir.
-		// yaptigmiz ayarlarla bunu hallettik
-				
-				Session session2 = sf.openSession();
-				Transaction tx2 = session2.beginTransaction();
-				System.out.println(session2.get(H1_Ogrenci.class, 11));
-				System.out.println(session2.get(H1_Ogrenci.class, 12));
-				
-				tx2.commit();
-		
-		
-	//	tx.commit();
-	//	sf.close();
-	//	session.close();
-	}
+
+        // Ayrı bir sessionda aynı veriye (11) erişmek istersek ne olur?
+        // Cevap: Bu veri, diğer session'a ait oldugu icin bu session'nın cache'inde bulunmaz.
+        // Bu sebeple ile yeniden veritabanına gitmek gerekecektir.
+        // yaptigmiz ayarlarla bunu hallettik
+
+        Session session2 = sf.openSession();
+        Transaction tx2 = session2.beginTransaction();
+        System.out.println(session2.get(H1_Ogrenci.class, 11));
+        System.out.println(session2.get(H1_Ogrenci.class, 12));
+
+        tx2.commit();
+
+
+        //	tx.commit();
+        //	sf.close();
+        //	session.close();
+    }
 
 }

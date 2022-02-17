@@ -11,55 +11,55 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity
-@Table(name="kitaplar2")
+@Table(name = "kitaplar2")
 @Cacheable
 @Cache(region = "H2_Kitap", usage = CacheConcurrencyStrategy.READ_WRITE)
 public class H2_Kitap {
-	
-	@Id
-	private int id;
-	private String isim;
-	
-	@ManyToOne
-	@JoinColumn(name="birlesme")
-	private H1_Ogrenci ogrenci;
 
-	public H2_Kitap() {
-		
-	}
-	
-	public H2_Kitap(int id, String isim) {
-		this.id = id;
-		this.isim = isim;
-	}
+    @Id
+    private int id;
+    private String isim;
 
-	public int getId() {
-		return id;
-	}
+    @ManyToOne
+    @JoinColumn(name = "birlesme")
+    private H1_Ogrenci ogrenci;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public H2_Kitap() {
 
-	public String getIsim() {
-		return isim;
-	}
+    }
 
-	public void setIsim(String isim) {
-		this.isim = isim;
-	}
+    public H2_Kitap(int id, String isim) {
+        this.id = id;
+        this.isim = isim;
+    }
 
-	
+    public int getId() {
+        return id;
+    }
 
-	public H1_Ogrenci getOgrenci() {
-		return ogrenci;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setOgrenci(H1_Ogrenci ogrenci) {
-		this.ogrenci = ogrenci;
-	}
-	@Override
-	public String toString() {
-		return "Kitap id=" + id + ", isim=" + isim;
-	}
+    public String getIsim() {
+        return isim;
+    }
+
+    public void setIsim(String isim) {
+        this.isim = isim;
+    }
+
+
+    public H1_Ogrenci getOgrenci() {
+        return ogrenci;
+    }
+
+    public void setOgrenci(H1_Ogrenci ogrenci) {
+        this.ogrenci = ogrenci;
+    }
+
+    @Override
+    public String toString() {
+        return "Kitap id=" + id + ", isim=" + isim;
+    }
 }

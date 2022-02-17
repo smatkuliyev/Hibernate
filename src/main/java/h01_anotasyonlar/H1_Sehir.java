@@ -27,72 +27,68 @@ import javax.persistence.Transient;
 //- @Transient anotasyonu bir degiskenin (sutun) tabloda yer almayacagini gosterir.
 
 
-@Entity 									// alttaki class ismiyle tablo olusturuyor
-@Table(name="sehir_tablosu") 				// istersek sql'deki ismi vermis oluruz, isim degistirmek icin
+@Entity                                    // alttaki class ismiyle tablo olusturuyor
+@Table(name = "sehir_tablosu")                // istersek sql'deki ismi vermis oluruz, isim degistirmek icin
 public class H1_Sehir {
-	
-	@Id 									// bu sutun PRIMARY KEY demektir, (unique ve not null) 
-	private int sehirPlaka; 				// tablonun ilk kolonu olusturuldu
-	
-//	@Column(name="sehir_adi")				// column isim degistirmek icin SQL'de
-	private String sehirAdi;
-	
-	private int sehirNufus;
-	
-	@Transient 								// java'da kullanabiliriz ama sql'deki tabloda gozukmez
-	private String adres;
 
-	
-	public H1_Sehir() {
-		
-	}
+    @Id                                    // bu sutun PRIMARY KEY demektir, (unique ve not null)
+    private int sehirPlaka;                // tablonun ilk kolonu olusturuldu
+
+    //	@Column(name="sehir_adi")				// column isim degistirmek icin SQL'de
+    private String sehirAdi;
+
+    private int sehirNufus;
+
+    @Transient                                // java'da kullanabiliriz ama sql'deki tabloda gozukmez
+    private String adres;
 
 
-	public H1_Sehir(int sehirPlaka, String sehirAdi, int sehirNufus) {
-		this.sehirPlaka = sehirPlaka;
-		this.sehirAdi = sehirAdi;
-		this.sehirNufus = sehirNufus;
-	}
+    public H1_Sehir() {
+
+    }
 
 
-	public int getSehirPlaka() {
-		return sehirPlaka;
-	}
+    public H1_Sehir(int sehirPlaka, String sehirAdi, int sehirNufus) {
+        this.sehirPlaka = sehirPlaka;
+        this.sehirAdi = sehirAdi;
+        this.sehirNufus = sehirNufus;
+    }
 
 
-	public void setSehirPlaka(int sehirPlaka) {
-		this.sehirPlaka = sehirPlaka;
-	}
+    public int getSehirPlaka() {
+        return sehirPlaka;
+    }
 
 
-	public String getSehirAdi() {
-		return sehirAdi;
-	}
+    public void setSehirPlaka(int sehirPlaka) {
+        this.sehirPlaka = sehirPlaka;
+    }
 
 
-	public void setSehirAdi(String sehirAdi) {
-		this.sehirAdi = sehirAdi;
-	}
+    public String getSehirAdi() {
+        return sehirAdi;
+    }
 
 
-	public int getSehirNufus() {
-		return sehirNufus;
-	}
+    public void setSehirAdi(String sehirAdi) {
+        this.sehirAdi = sehirAdi;
+    }
 
 
-	public void setSehirNufus(int sehirNufus) {
-		this.sehirNufus = sehirNufus;
-	}
+    public int getSehirNufus() {
+        return sehirNufus;
+    }
 
 
-	@Override
-	public String toString() {
-		return "H1_Sehir [sehirPlaka=" + sehirPlaka + ", sehirAdi=" + sehirAdi + ", sehirNufus=" + sehirNufus + "]";
-	}
+    public void setSehirNufus(int sehirNufus) {
+        this.sehirNufus = sehirNufus;
+    }
 
 
-	
-		
-	
+    @Override
+    public String toString() {
+        return "H1_Sehir [sehirPlaka=" + sehirPlaka + ", sehirAdi=" + sehirAdi + ", sehirNufus=" + sehirNufus + "]";
+    }
+
 
 }

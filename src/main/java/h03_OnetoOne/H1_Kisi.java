@@ -7,71 +7,69 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="kisiler")
+@Table(name = "kisiler")
 public class H1_Kisi {
-	
-	@Id
-	@Column(name="kisi_id")
-	private int kisiId;
-	
-	@Column(name="kisi_ad")
-	private String kisiAd;
-	
-	private int kisiYas;
-	
-	@OneToOne(mappedBy = "kisi")
-	private H2_Gunluk  gunluk;
 
-	
-	
-	public H1_Kisi() {
-		super();
-	}
+    @Id
+    @Column(name = "kisi_id")
+    private int kisiId;
+
+    @Column(name = "kisi_ad")
+    private String kisiAd;
+
+    private int kisiYas;
+
+    @OneToOne(mappedBy = "kisi")
+    private H2_Gunluk gunluk;
 
 
-	public H1_Kisi(int kisiId, String kisiAd, int kisiYas) {
-		super();
-		this.kisiId = kisiId;
-		this.kisiAd = kisiAd;
-		this.kisiYas = kisiYas;
-	}
+    public H1_Kisi() {
+        super();
+    }
 
 
-	public int getKisiId() {
-		return kisiId;
-	}
+    public H1_Kisi(int kisiId, String kisiAd, int kisiYas) {
+        super();
+        this.kisiId = kisiId;
+        this.kisiAd = kisiAd;
+        this.kisiYas = kisiYas;
+    }
 
 
-	public void setKisiId(int kisiId) {
-		this.kisiId = kisiId;
-	}
+    public int getKisiId() {
+        return kisiId;
+    }
 
 
-	public String getKisiAd() {
-		return kisiAd;
-	}
+    public void setKisiId(int kisiId) {
+        this.kisiId = kisiId;
+    }
 
 
-	public void setKisiAd(String kisiAd) {
-		this.kisiAd = kisiAd;
-	}
+    public String getKisiAd() {
+        return kisiAd;
+    }
 
 
-	public int getKisiYas() {
-		return kisiYas;
-	}
+    public void setKisiAd(String kisiAd) {
+        this.kisiAd = kisiAd;
+    }
 
 
-	public void setKisiYas(int kisiYas) {
-		this.kisiYas = kisiYas;
-	}
+    public int getKisiYas() {
+        return kisiYas;
+    }
 
 
-	@Override
-	public String toString() {
-		return "H1_Kisi [kisiId=" + kisiId + ", kisiAd=" + kisiAd + ", kisiYas=" + kisiYas + "]";
-	}
-	
-	
+    public void setKisiYas(int kisiYas) {
+        this.kisiYas = kisiYas;
+    }
+
+
+    @Override
+    public String toString() {
+        return "H1_Kisi [kisiId=" + kisiId + ", kisiAd=" + kisiAd + ", kisiYas=" + kisiYas + "]";
+    }
+
 
 }

@@ -9,66 +9,64 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "personeller")
 public class Personel {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE) 		// Id'inin 1 den baslayarak sirasiyla artmasi(onerilen)
-	private long id;
-	
-	private String ad;
-	
-	private String soyad;
-	
-	private int maas;
 
-	public Personel() {
-		super();
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)        // Id'inin 1 den baslayarak sirasiyla artmasi(onerilen)
+    private long id;
 
-	public Personel(String ad, String soyad, int maas) {
-		super();
-		this.ad = ad;
-		this.soyad = soyad;
-		this.maas = maas;
-	}
+    private String ad;
 
-	public long getId() {
-		return id;
-	}
+    private String soyad;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    private int maas;
 
-	public String getAd() {
-		return ad;
-	}
+    public Personel() {
+        super();
+    }
 
-	public void setAd(String ad) {
-		this.ad = ad;
-	}
+    public Personel(String ad, String soyad, int maas) {
+        super();
+        this.ad = ad;
+        this.soyad = soyad;
+        this.maas = maas;
+    }
 
-	public String getSoyad() {
-		return soyad;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setSoyad(String soyad) {
-		this.soyad = soyad;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public int getMaas() {
-		return maas;
-	}
+    public String getAd() {
+        return ad;
+    }
 
-	public void setMaas(int maas) {
-		this.maas = maas;
-	}
+    public void setAd(String ad) {
+        this.ad = ad;
+    }
 
-	@Override
-	public String toString() {
-		return "id=" + id + ", ad=" + ad + ", soyad=" + soyad + ", maas=" + maas;
-	}
-	
-	
-	
+    public String getSoyad() {
+        return soyad;
+    }
+
+    public void setSoyad(String soyad) {
+        this.soyad = soyad;
+    }
+
+    public int getMaas() {
+        return maas;
+    }
+
+    public void setMaas(int maas) {
+        this.maas = maas;
+    }
+
+    @Override
+    public String toString() {
+        return "id=" + id + ", ad=" + ad + ", soyad=" + soyad + ", maas=" + maas;
+    }
+
 
 }
